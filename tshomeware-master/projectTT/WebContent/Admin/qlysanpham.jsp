@@ -53,7 +53,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h2>QUẢN LÝ SẢN PHẨM</h2>
-						<!-- <div class="navbar-header">
+						 <!-- <div class="navbar-header">
 							<button type="button" class="navbar-toggle"
 								data-toggle="collapse" data-target=".sidebar-collapse">
 								<span class="sr-only">Toggle navigation</span> <span
@@ -65,7 +65,7 @@
 						</div> -->
 						
 						<!-- comment -->
-					<!-- 	<div class="btn btn-success" style="padding: 0px 0px;" >
+					 	<div class="btn btn-success" style="padding: 0px 0px;" >
 							<button type="button" class="navbar-toggle"
 								data-toggle="collapse" data-target=".sidebar-collapse">
 								<span class="sr-only">Toggle navigation</span> <span
@@ -73,7 +73,7 @@
 									class="icon-bar"></span>
 							</button>
 								<a class="navbar-brand" href="/TH_Homeware/Admin/product_insert.jsp" style="color: white;text-transform:uppercase;font-size:14px;"> Thêm Sản Phẩm</a>
-						</div> -->
+						</div> 
 						
 						<!-- comment -->
 						
@@ -125,7 +125,7 @@
 												<td><%=pro.getID_Product()%></td>
 												<td><%=cateDAO.getIdCate(pro.getDanh_Muc().getID_Category()).getID_Category()%></td>
 												<td><%=pro.getName_Product()%></td>
-												<td><img style="width:60px; height:auto" src="<%=pro.getImage()%>" alt="" /></td>
+												<td><img style="width:60px; height:60px" src="<%=pro.getImage()%>" alt="" /></td>
 												<td><%=pro.getQuantity()%></td>
 												<td><%=pro.getDescribe()%></td>
 												<td><%=pro.getPrice()%></td>
@@ -147,7 +147,7 @@
 													<a href="/TH_Homeware/Admin/product_edit.jsp?action=Update&ID_Product=<%=pro.getID_Product()%>&Danh_Muc=<%=cateDAO.getIdCate(pro.getDanh_Muc().getID_Category()).getID_Category()%>&Name_Product=<%=pro.getName_Product() %>&Image=<%=pro.getImage() %>&Quantity=<%=pro.getQuantity() %>&Describe=<%=pro.getDescribe() %>&Price=<%=pro.getPrice()%>&Sale=<%=pro.getSale()%>&Nhan_Hieu=<%=brandDAO.getIdBrand(pro.getNhan_Hieu().getID_Brand()).getID_Brand()%>&Warranty_Period=<%=pro.getWarranty_Period()%>&Mua=<%=seasonDAO.getIdSeason(pro.getMua().getID_Season()).getID_Season()%>"
 												
 													class="btn btn-info btn-xs" style="margin-bottom:5px">Sửa</a> 
-													 <%-- <a <% String ID_Product = pro.getID_Product();
+													 <a <% String ID_Product = pro.getID_Product();
 													 if (ttDAO.checkEmptyProduct(ID_Product) == true) {											
 												        %>style="display:none" <%}
                                                     else{ %> style=" display:block;color:black"
@@ -155,7 +155,7 @@
 													}
 												%>  href="/TH_Homeware/ProductServlet_Delete?action=Delete&ID_Product=<%=pro.getID_Product()%>" onclick="return confirm('Bạn có chắc chắn xóa sản phẩm <%=pro.getName_Product() %> không ?')"
 														 
-													 class="btn btn-warning btn-xs">Xóa</a>  --%> 
+													 class="btn btn-warning btn-xs">Xóa</a>  
 													 </td>
 											</tr>
 										<%

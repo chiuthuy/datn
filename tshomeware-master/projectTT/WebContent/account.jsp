@@ -144,7 +144,7 @@ $(document).ready(function(){
 								value="<%=usernamex%>" style="margin-bottom:3%" /> 
 							<input type="password"
 								placeholder="Mật Khẩu" name="mat_khau" value="<%=passwordx%>" style="margin-bottom:3%" />
-								<p style="color: white; margin-left:7%"><%=error%>
+								<p style="color: red; margin-left:7%"><%=error%>
 							<input type="hidden" name="access" value="2" />
 							<input type="hidden" name="status" value="1" />
 							 
@@ -257,7 +257,7 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</div> 
-			<div class="modal fade" id="resendModal" role="dialog" style="display: none">
+		<div class="modal fade" id="resendModal" role="dialog" style="display: none">
 		<div class="modal-dialog modal-center" role="document">
 			<div class="modal-content">
 			<div class="modal-header">
@@ -270,6 +270,7 @@ $(document).ready(function(){
 					<button type="button" id="btn-ok" class="btn btn-success" data-dismiss="modal">Đồng ý</button>
 				</div>
 			</div>
+		</div>
 		</div>
    
 </body>

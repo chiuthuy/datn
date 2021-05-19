@@ -611,7 +611,7 @@ public class ProductDAOImpl implements ProductDAO {
 		public ArrayList<Product> listSanPhambySearch(String textSearch) {
 			Connection ketNoi = DBConnection.getConnection();
 			
-			String sql = "select * from Product where Name_Product like  '%" + textSearch + "%'";
+			String sql = "select * from Product where Name_Product like  N'%" + textSearch + "%'";
 		
 			System.out.println("xzz" + sql);
 			ArrayList<Product> list = new ArrayList<>();

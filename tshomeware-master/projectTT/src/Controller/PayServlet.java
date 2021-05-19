@@ -161,10 +161,10 @@ public class PayServlet extends HttpServlet {
 					proDAO.updateQuantity(pro);
                     
 					SendMail.sendMail(Email, "Xin Chào, Khách hàng: " + acc.getUsername(),
-							"Cảm ơn bạn đã mua hàng tại TS HOMEWARE" + "\nMã Sản Phẩm: " + pr.getID_Product() + "\nTên Sản Phẩm: " + pr.getName_Product()
+							"Cảm ơn bạn đã mua hàng tại TH HOMEWARE" + "\nMã Sản Phẩm: " + pr.getID_Product() + "\nTên Sản Phẩm: " + pr.getName_Product()
 									+ "\nSố Lượng: " + ds.getValue() + "\nTổng Tiền: " + st + " VND"
 									+ "\nĐịa Chỉ Giao Hàng: " + Shipping_Address + "\nSố điện thoại: " + Phone +"\nPhương Thức Thanh Toán: "
-									+ Payment_Methods +"\nĐơn hàng của bạn sẽ được giao trong vòng 3 ngày, mọi thắc mắc xin liên hệ chúng tôi TS HOMEWARE - 0386.300.021");
+									+ Payment_Methods +"\nĐơn hàng của bạn sẽ được giao trong vòng 3 ngày, mọi thắc mắc xin liên hệ chúng tôi TH HOMEWARE - 0379.185.807");
 				}
 
 				request.setAttribute("message", "Thanh toán thành công !");

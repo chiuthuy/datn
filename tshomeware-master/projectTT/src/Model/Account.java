@@ -15,7 +15,11 @@ public class Account {
 
 	public Account() {
 		super();
-	}
+		/*
+		 * this.ID_Account = ""; this.Username = ""; this.Password = ""; this.Email =
+		 * ""; this.Full_Name = ""; this.Address = ""; this.SDT = ""; this.Access = 0;
+		 * this.Status = 0;
+		 */	}
 
 	public Account(String iD_Account, String username, String password, String email, String full_Name, String address,
 			String sDT, int access, int status) {

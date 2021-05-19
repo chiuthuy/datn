@@ -2,6 +2,7 @@
 <%@page import="Model.Account"%>
 <%@page import="Model.Category"%>
 <%@page import="Dao.CategoryDAOImpl"%>
+<%@page import="Controller.LoginServlet"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -81,7 +82,14 @@
   display: block;
    margin-left:5px;
 }
-
+#logo{
+	color: #ff0101;    
+    width: 300px;
+    text-align: center;
+    height: 60px;
+    font-size: 22px;
+    font-weight: 700;
+}
 
 .navbar-nav .log .dropdown-content a:hover {color: #FE980F;}
 .dropdown-content li a:hover {background-color: red;}
@@ -150,15 +158,16 @@ $(document).ready(function(){
 	%>
 	<%
 	
-	Account user = (Account)session.getAttribute("memberSession");
+	Account user = (Account) session.getAttribute("memberSession");
+	
 	String username;
-	if(user!=null){
+	if(user != null){
 		username = user.getUsername();
 	}
 	else {
 		username ="";
 	}
-%>
+	%>
 	
 
 	<header id="header">
@@ -196,7 +205,7 @@ $(document).ready(function(){
 			<div class="row">
 				<div class="col-sm-2" >
 					<div class="logo pull-left">
-						<a href="index.jsp"><img src="images/home/mylogo.png" alt="" /></a>
+						<a id="logo" href="index.jsp">TH HOMEWARE</a>
 					</div>
 					</div>
 					<div class="col-sm-2" >
@@ -205,7 +214,7 @@ $(document).ready(function(){
 					
     <!-- <input type="text" id= "textSearchIndex" class="form-control" style="width:120%; border-radius:15px; border:2px solid #219AFC; padding:18px 15px;position:relative" type="text" placeholder="Search">
     <div id="btnSearchIndex" class="icon"><i class="fas fa-search" style="position: absolute; top: 30%; right: 0%"></i></div>  -->
-    <input type="text" id= "text-Search" class="form-control" style="width:120%; border-radius:15px; border:2px solid #219AFC; padding:18px 15px;position:relative" type="text" placeholder="Tìm kiếm...">
+    <input type="text" id= "text-Search" name="textSearch" class="form-control" style="width:120%; border-radius:15px; border:2px solid #219AFC; padding:18px 15px;position:relative" type="text" placeholder="Tìm kiếm...">
     <div id="btnSearch" class="icon"><i class="fas fa-search" style="position: absolute; top: 30%; right: 0%"></i></div> <span id="err11" style="color:white" ></span>
    <!-- <div class="search-h">
                         <input type="text" id="text-Search" placeholder="Tìm kiếm...">
@@ -216,8 +225,8 @@ $(document).ready(function(){
 					<div class="shop-menu pull-right">
 						<ul class="nav navbar-nav">
 
-							<li><a <%if(user!=null){%> style="display:block; " <%}
-                        else{ %> style="display:none"<%} %>><i
+							<li><a <%if(user!=null){%> style="display:block " <%}
+                        else{ %> style="display:none" <%} %>><i
 									class="fa fa-user" style="height:20px; padding: 1px 6px ;border:2px solid black; border-radius:10px"></i> Tài khoản: <%=username%></a>
 									
 									<ul role="menu" class="sub-menu"<%if(user==null){%> style="display:none" <%} %> >
@@ -236,8 +245,8 @@ $(document).ready(function(){
 									
 									</li>
 											<li class="dropdown log">
-                                  <a class="dropbtn" <%if(user!=null){%> style="display:none; " <%}
-                        else{ %> style="display:block"<%} %>><i
+                                  <a class="dropbtn" <%if(user!=null){%> style="display:none " <%}
+                        else{ %> style="display:block" <%} %>><i
 									class="fa fa-user" style="height:20px; padding: 1px 6px ;border:2px solid black; border-radius:10px"></i> Tài Khoản<i
 									class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="dropdown-content sub-menu1">
@@ -250,24 +259,24 @@ $(document).ready(function(){
 
 								            
 									
-									<%
+									<%-- <%
 								for (Category Parent_Category : danhMucDAO.getListParentCategory()) {
-							%>
+							%> --%>
 							<li><a href="#"><i class="fa fa-star" style="height:20px; padding: 1px 6px ;border:2px solid black; border-radius:10px"></i> Danh Sách<i
 									class="fa fa-angle-down"></i></a>
 							<ul role="menu" class="sub-menu">
 									<%
-										for (Category danh_muc_con : danhMucDAO.getListSubCategory(Parent_Category.getID_Category())) {
+										for (Category category : danhMucDAO.getList()) {
 									%>
 									<li id="mmm"><a 
-										href="index.jsp?ID_Category=<%=danh_muc_con.getID_Category()%>"><%=danh_muc_con.getName_Category()%></a></li>
+										href="index.jsp?ID_Category=<%=category.getID_Category()%>"><%=category.getName_Category()%></a></li>
 									<%
 										}
 									%>
 								</ul></li>
-								<%
+								<%-- <%
 								}
-							%>
+							%> --%>
 							 <li class="baohanh-header"> <a href="BaoHanh.jsp"><i class="fas fa-toolbox" style="height:20px; padding: 1px 6px ;border:2px solid black; border-radius:10px"></i> Bảo Hành
                              
                             </a>

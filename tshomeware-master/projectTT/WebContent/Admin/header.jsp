@@ -47,7 +47,7 @@ if(user != null){
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/TH_Homeware/Admin/index.jsp">TS HOMEWARE</a>
+			<a class="navbar-brand" href="/TH_Homeware/Admin/index.jsp">TH HOMEWARE</a>
 		</div>
 		<div
 			style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;">

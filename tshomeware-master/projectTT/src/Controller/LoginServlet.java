@@ -35,35 +35,44 @@ public class LoginServlet extends HttpServlet {
 		int status1 = Integer.parseInt(request.getParameter("status"));
 		String error = "";
 
+		Boolean checkLogin = taiKhoanDAO.checkLogin(usernamex, passwordx, access1, status1);
+		Boolean checkLoginKH = taiKhoanDAO.checkLogin1(usernamex, passwordx, access1, status1);
+		
 		if (usernamex.equals("") || passwordx.equals("")) {
 			error = "Vui lòng nhập đầy đủ thông tin !";
 
-		} else if (taiKhoanDAO.checkLogin(usernamex, passwordx, access1, status1) == false) {
+		} else if (checkLogin == false) {
 			error = "Quyền chưa được cấp hoặc Tài Khoản hoặc Mật Khẩu không chính xác !";
-		} else if (taiKhoanDAO.checkLogin1(usernamex, passwordx, access1, status1) == false) {
+		} else if (checkLoginKH == false) {
 			error = "Quyền chưa được cấp hoặc Tài Khoản hoặc Mật Khẩu không chính xác !";
 		}
 		if (error.length() > 0) {
 			request.setAttribute("error", error);
 		}
 
-		String url = "/account.jsp";
-		AccountDAOImpl accountDAO = new AccountDAOImpl();
-		Account acc = accountDAO.getUser(usernamex, passwordx);
-		if(acc.getUsername()!=null) {
+			String url = "/account.jsp";
 			
-			if(acc.getAccess()==2) {
-				url = "/index.jsp";
-				
-			}else if (acc.getAccess()==1 || acc.getAccess()==3 || acc.getAccess()==4) {
-				url = "/Admin/index.jsp";
-				
+			AccountDAOImpl accountDAO = new AccountDAOImpl();
+			Account acc = accountDAO.getUser(usernamex, passwordx);
+			System.out.println(acc.getPassword());
+			if(acc.getUsername()!=null ) {
+				if(acc.getAccess()==2) {
+					url = "/index.jsp";
+					
+				}else if (acc.getAccess()==1 || acc.getAccess()==3 || acc.getAccess()==4) {
+					url = "/Admin/index.jsp";
+					
+				}
 			}
-		}
-
-		HttpSession session = request.getSession();
-		session.setAttribute("memberSession", acc);
-		request.getRequestDispatcher(url).forward(request, response);
+			
+			System.out.println(url);
+			System.out.println(checkLoginKH);
+			HttpSession session = request.getSession();
+			if(acc.getAccess() >= 1) {
+				session.setAttribute("memberSession", acc);
+			}
+			request.getRequestDispatcher(url).forward(request, response);
+		
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

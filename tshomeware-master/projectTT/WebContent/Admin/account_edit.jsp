@@ -138,7 +138,7 @@
 											<div class="form-group">
 												<label>Trạng Thái</label> 
 												<span style="color: red"><%=status_error %></span>
-												<select class="form-control" name="Status" readonly style="background:#DDDDDD">
+												<select class="form-control" name="Status"  style="background:#DDDDDD">
 													<option value="1">Đã Kích Hoạt</option>
 													
 												</select>

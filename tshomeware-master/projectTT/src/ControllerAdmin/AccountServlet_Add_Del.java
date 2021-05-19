@@ -188,8 +188,8 @@ public class AccountServlet_Add_Del extends HttpServlet {
 					Account acc = new Account(mtk, username, password, email, fullname, address, phone, access, status);
 					accDAO.insertAccount(acc);
 					url = "/Admin/account_manager.jsp";
-					SendMail.sendMail(acc.getEmail(), "TS Homeware",
-							"Xin Chào, " + acc.getEmail() + "\nBạn đã đăng ký thành công tài khoản tại TS Homeware."
+					SendMail.sendMail(acc.getEmail(), "TH Homeware",
+							"Xin Chào, " + acc.getEmail() + "\nBạn đã đăng ký thành công tài khoản tại TH Homeware."
 									+ "\nUsername: " + acc.getUsername() + "\nPassword: " + acc.getPassword());
 				break;
 				} else {

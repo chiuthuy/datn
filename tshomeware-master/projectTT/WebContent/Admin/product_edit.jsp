@@ -1,3 +1,9 @@
+<%@page import="Model.Category"%>
+<%@page import="Model.Season"%>
+<%@page import="Model.Brand"%>
+<%@page import="Dao.SeasonDAO"%>
+<%@page import="Dao.CategoryDAOImpl"%>
+<%@page import="Dao.BrandDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -91,6 +97,11 @@
 		
 
 	%>
+	<%
+		SeasonDAO seasonDAO= new SeasonDAO();
+		CategoryDAOImpl categoryDAOImpl= new CategoryDAOImpl();
+		BrandDAOImpl brandDAOImpl= new BrandDAOImpl();
+	%>
 
 	<div id="wrapper">
 		<jsp:include page="header.jsp"></jsp:include>
@@ -171,10 +182,13 @@
 											<div class="form-group">
 												<label>Sản Phẩm Mùa</label> 
 												<select class="form-control" name="Mua">
-													<option value="1">Mùa Tết</option>
-													<option value="2">Mùa Đông</option>
-													<option value="3">Mùa Hè</option>
-													<option value="4">Mùa Trung Thu</option>
+													<%
+														for (Season season : seasonDAO.getListSeason()) {
+													%>
+													<option value="<%=season.getID_Season()%>"><%=season.getName_Season()%></option>
+													<%
+													}
+													%>													
 												</select>
 												<%-- <input class="form-control" type="text" name="Mua" value="<%=request.getParameter("Mua")%>" /> --%>
 											</div> 

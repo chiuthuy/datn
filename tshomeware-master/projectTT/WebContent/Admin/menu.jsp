@@ -74,7 +74,7 @@
 						%>style="display:none" <%}else{ %> style=" display:block;"<%}%> class="active-menu" href="/TH_Homeware/Admin/promotion_manager.jsp"><i
 					class="fa fa-qrcode fa-3x"></i> QUẢN LÝ KHUYẾN MÃI </a></li> --%>
 					<li><a  <% if (user.getAccess() == 4) {											
-						%>style="display:none" <%}else{ %> style=" display:block;"<%}%> class="active-menu" href="https://app.subiz.com/convo"><i 
+						%>style="display:none" <%}else{ %> style=" display:block;"<%}%> class="active-menu" href="https://app.subiz.com.vn/convo"><i 
 					class="fa-comment fa fa-3x"></i> HỖ TRỢ KHÁCH HÀNG</a></li> 
 					 
 		</ul>

@@ -55,7 +55,10 @@ public class TinhTrangDAO {
 			Date d=new Date();
 			SimpleDateFormat formatDay = new SimpleDateFormat("yyyy/MM/dd");
 			String date = formatDay.format(d);
-			String sqlString = String.format("select p.ID_Product, p.ID_Category, P.Name_Product, P.Image, P.Quantity,P.Describe, P.Price, P.Sale, P.ID_Brand, P.Warranty_Period from Product P where contains ( P.Name_Product, '%s') ",ss);
+			//String sqlString = String.format("select p.ID_Product, p.ID_Category, P.Name_Product, P.Image, P.Quantity,P.Describe, P.Price, P.Sale, P.ID_Brand, P.Warranty_Period from Product P where contains ( P.Name_Product, '%s') ",ss);
+			String sqlString = String.format("select p.ID_Product, p.ID_Category, P.Name_Product, P.Image, P.Quantity,P.Describe, P.Price, P.Sale, P.ID_Brand, P.Warranty_Period from Product P like %s ",ss);
+
+			System.out.println(sqlString);
 			ResultSet rs = stm.executeQuery(sqlString);
 			while (rs.next()) {
 		
@@ -73,12 +76,14 @@ public class TinhTrangDAO {
 				sanPham.setNhan_Hieu(nhanHieu);
 				sanPham.setWarranty_Period(rs.getInt("Warranty_Period"));
 				listProduct.add(sanPham);
+				
 			/*
 			 * if(removeAccent(rs.getString("name")).toLowerCase().contains(removeAccent(
 			 * textSearch).toLowerCase())){ listProduct.add(sanPham); }
 			 */
 				
 			}
+			System.out.println(listProduct);
 		return listProduct;
 		}
 	

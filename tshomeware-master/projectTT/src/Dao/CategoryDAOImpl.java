@@ -64,7 +64,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		@Override
 		public ArrayList<Category> getList() {
 			Connection ketNoi = DBConnection.getConnection();
-			String sql = "SELECT * FROM Category WHERE Parent_Category='GD'";
+			String sql = "SELECT * FROM Category";
 			ArrayList<Category> arr = new ArrayList<>();
 			try {
 				PreparedStatement ps = ketNoi.prepareStatement(sql);

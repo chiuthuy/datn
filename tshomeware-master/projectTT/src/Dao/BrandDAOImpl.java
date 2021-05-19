@@ -12,6 +12,29 @@ import Model.Category;
 
 public class BrandDAOImpl implements BrandDAO {
 	@Override
+	public ArrayList<Brand> getList() {
+		Connection ketNoi = DBConnection.getConnection();
+		String sql = "SELECT * FROM Brand";
+		ArrayList<Brand> arr = new ArrayList<>();
+		try {
+			PreparedStatement ps = ketNoi.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Brand nhanHieu = new Brand();
+				nhanHieu.setID_Brand(rs.getString("ID_Brand"));
+				nhanHieu.setName_Brand(rs.getString("Name_Brand"));
+				nhanHieu.setCountry(rs.getString("Country"));
+				nhanHieu.setParent_Brand(rs.getString("Parent_Brand"));
+				arr.add(nhanHieu);
+			}
+			ketNoi.close();
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+		return arr;
+	}
+	@Override
 	public ArrayList<Brand> getListParentBrand() {
 		Connection ketNoi = DBConnection.getConnection();
 		String sql = "SELECT * FROM Brand WHERE Parent_Brand='null'";

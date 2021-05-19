@@ -91,11 +91,12 @@
 													class="btn btn-info btn-xs" style="margin-bottom:5px">Sửa</a> </span>
 													<span> <a <% String ID_Category = cate.getID_Category();
 													 if (ttDAO.checkEmptyCategory(ID_Category) == true) {											
-												        %>style="display:none" <%}
-                                                    else{ %> style=" display:block;width:16%;margin-left:42%"
-													<%
+												        %>style="display:none" 
+												    <%}
+                                                    else{ %> style=" display:block; width:16%; margin-left:42%"
+                                                    <%
 													}
-												%>  href="/TH_Homeware/CategoryServlet_Delete?action=Delete&ID_Category=<%=cate.getID_Category()%>" onclick="return confirm('Bạn có chắc chắn xóa danh mục <%=cate.getName_Category() %> không ?')"
+												%> href="/TH_Homeware/CategoryServlet_Delete?action=Delete&ID_Category=<%=cate.getID_Category()%>" onclick="return confirm('Bạn có chắc chắn xóa danh mục <%=cate.getName_Category() %> không ?')"
 														 
 													 class="btn btn-warning btn-xs">Xóa</a>  </span>
 													 </td>

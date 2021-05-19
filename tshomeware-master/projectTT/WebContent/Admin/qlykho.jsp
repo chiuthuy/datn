@@ -60,7 +60,7 @@
 						</div> -->
 						
 						<!-- comment -->
-						<!-- <div class="btn btn-success" style="padding: 0px 0px;" >
+						<div class="btn btn-success" style="padding: 0px 0px;" >
 							<button type="button" class="navbar-toggle"
 								data-toggle="collapse" data-target=".sidebar-collapse">
 								<span class="sr-only">Toggle navigation</span> <span
@@ -68,7 +68,7 @@
 									class="icon-bar"></span>
 							</button>
 								<a class="navbar-brand" href="/TH_Homeware/Admin/kho_insert.jsp" style="color: white;text-transform:uppercase;font-size:14px;"> Thêm Sản Phẩm Vào Kho</a>
-						</div> -->
+						</div>
 						<!-- comment -->
 						<!-- <div class="navbar-header" style="margin-left:30px">
 							<button type="button" class="navbar-toggle"

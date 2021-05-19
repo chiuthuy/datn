@@ -60,9 +60,11 @@ public class ProductServlet_Add_Del extends HttpServlet {
 		String action = request.getParameter("action");
 		String url = "";
 		String ID_Product = request.getParameter("ID_Product");
+		System.out.println("wwww "+ID_Product);
 		String Danh_Muc = request.getParameter("Danh_Muc");
 		String Name_Product = request.getParameter("Name_Product");
-		String Image = request.getParameter("Image");
+		String Image1 = request.getParameter("Image");
+		String Image="images/sanpham/"+Image1;
 		int Quantity = Integer.parseInt(request.getParameter("Quantity"));
 		String Describe = request.getParameter("Describe");
 		int Price = Integer.parseInt(request.getParameter("Price"));

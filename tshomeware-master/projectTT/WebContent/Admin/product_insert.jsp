@@ -1,4 +1,9 @@
 <%@page import="Model.Category"%>
+<%@page import="Model.Season"%>
+<%@page import="Model.Brand"%>
+<%@page import="Dao.SeasonDAO"%>
+<%@page import="Dao.CategoryDAOImpl"%>
+<%@page import="Dao.BrandDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -93,6 +98,11 @@ if (session.getAttribute("memberSession") == null) {
 			mua = (String) request.getAttribute("Mua");
 		}  */
 	%>
+	<%
+		SeasonDAO seasonDAO= new SeasonDAO();
+		CategoryDAOImpl categoryDAOImpl= new CategoryDAOImpl();
+		BrandDAOImpl brandDAOImpl= new BrandDAOImpl();
+	%>
 
 	<div id="wrapper">
 		<jsp:include page="header.jsp"></jsp:include>
@@ -123,9 +133,18 @@ if (session.getAttribute("memberSession") == null) {
 											</div>
 											
 											 <div class="form-group">
-												<label>Mã Danh Mục</label> 
+												<label>Tên Danh Mục</label> 
 												<span style="color: red"><%=madanhmuc_error %></span>
-												<input class="form-control" type="text" name="Danh_Muc" value="<%=madanhmuc %>" />
+												<select class="form-control" name="Danh_Muc">
+													<%
+														for (Category category : categoryDAOImpl.getList()) {
+													%>
+													<option value="<%=category.getID_Category()%>"><%=category.getName_Category()%></option>
+													<%
+													}
+													%>													
+												</select>
+												<%-- <input class="form-control" type="text" name="Danh_Muc" value="<%=madanhmuc %>" /> --%>
 											</div> 
 											
 											<div class="form-group">											
@@ -137,13 +156,13 @@ if (session.getAttribute("memberSession") == null) {
 											<div class="form-group">
 												<label>Chọn hình ảnh</label> 
 												<span style="color: red"><%=hinhanh_error %></span>
-												<input type="text" class="form-control" name="Image" value="<%=hinhanh %>" />
+												<input type="file" class="form-control" name="Image" value="<%=hinhanh %>" />
 											</div>
 											
 											<div class="form-group">
 												<label>Số lượng</label> 
 												<span style="color: red"><%=soluong_error %></span>
-												<input class="form-control" type="text" name="Quantity" value="<%=soluong %>" />
+												<input class="form-control" type="number" name="Quantity" value="<%=soluong %>" />
 											</div>
 											
 											<div class="form-group">
@@ -165,7 +184,16 @@ if (session.getAttribute("memberSession") == null) {
 											 <div class="form-group">
 												<label>Nhãn Hiệu</label> 
 												<span style="color: red"><%=nhanhieu_error %></span>
-												<input class="form-control" type="text" name="Nhan_Hieu" value="<%=nhanhieu %>" />
+												<select class="form-control" name="Nhan_Hieu">
+													<%
+														for (Brand brand : brandDAOImpl.getList()) {
+													%>
+													<option value="<%=brand.getID_Brand()%>"><%=brand.getName_Brand()%></option>
+													<%
+													}
+													%>													
+												</select>
+												<%-- <input class="form-control" type="text" name="Nhan_Hieu" value="<%=nhanhieu %>" /> --%>
 											</div> 
 											<div class="form-group">
 												<label>Hạn bảo Hành</label> 
@@ -180,10 +208,13 @@ if (session.getAttribute("memberSession") == null) {
 											<div class="form-group">
 												<label>Sản Phẩm Mùa</label> 
 												<select class="form-control" name="Mua">
-													<option value="1">Mùa Tết</option>
-													<option value="2">Mùa Đông</option>
-													<option value="3">Mùa Hè</option>
-													<option value="4">Mùa Trung Thu</option>
+													<%
+														for (Season season : seasonDAO.getListSeason()) {
+													%>
+													<option value="<%=season.getID_Season()%>"><%=season.getName_Season()%></option>
+													<%
+													}
+													%>													
 												</select>
 												<%-- <input class="form-control" type="text" name="Mua" value="<%=request.getParameter("Mua")%>" /> --%>
 											</div> 

@@ -95,7 +95,7 @@
 				<div class="col-sm-3">
 					<div class="address">
 						<img src="images/home/map.png" alt="" />
-						<p> 97 Man Thiện, Phường Hiệp Phú, Quận 9, TP.Hồ Chí Minh, Việt Nam. </p>
+						<p> 575 Kim Mã, Phường Ngọc Khánh, Quận Ba Đình, TP.Hà Nội, Việt Nam. </p>
 					</div>
 				</div>
 			</div>
@@ -177,33 +177,22 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- <script type='text/javascript'>window._sbzq||function(e){e._sbzq=[];
-	var t=e._sbzq;t.push(["_setAccount",72082]);
-	var n=e.location.protocol=="https:"?"https:":"http:";
-	var r=document.createElement("script");
-	r.type="text/javascript";r.async=true;
-	r.src=n+"//static.subiz.com/public/js/loader.js";
-	var i=document.getElementsByTagName("script")[0];
-	i.parentNode.insertBefore(r,i)}(window);
-	</script> -->
-	<script>
-		(function(s, u, b, i, z) {
-			u[i] = u[i] || function() {
-				u[i].t = +new Date();
-				(u[i].q = u[i].q || []).push(arguments);
-			};
-			z = s.createElement('script');
-			var zz = s.getElementsByTagName('script')[0];
-			z.async = 1;
-			z.src = b;
-			z.id = 'subiz-script';
-			zz.parentNode.insertBefore(z, zz);
-		})(document, window, 'https://widgetv4.subiz.com/static/js/app.js',
-				'subiz');
-		/* subiz('setAccount', 'acqetkhujxyunuatbxzw'); */
-		subiz('setAccount', 'acqjujnlgjijhdlmdcuc');
-	</script>
+	<script>!function(s,u,b,i,z){var o,t,r,y;s[i]||(s._sbzaccid=z,s[i]=function(){s[i].q.push(arguments)},s[i].q=[],s[i]("setAccount",z),r=["widget.subiz.net","storage.googleapis"+(t=".com"),"app.sbz.workers.dev",i+"a"+(o=function(k,t){var n=t<=6?5:o(k,t-1)+o(k,t-3);return k!==t?n:n.toString(32)})(20,20)+t,i+"b"+o(30,30)+t,i+"c"+o(40,40)+t],(y=function(k){var t,n;s._subiz_init_2094850928430||r[k]&&(t=u.createElement(b),n=u.getElementsByTagName(b)[0],t.async=1,t.src="https://"+r[k]+"/sbz/app.js?accid="+z,n.parentNode.insertBefore(t,n),setTimeout(y,2e3,k+1))})(0))}(window,document,"script","subiz","acqzkszpnijpkcrlhrry")</script>
+	
+	
+	<!--Start of Tawk.to Script-->
+		<!-- <script type="text/javascript">
+		var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+		(function(){
+		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+		s1.async=true;
+		s1.src='https://embed.tawk.to/60914e8cb1d5182476b57e49/1f4rplm3s';
+		s1.charset='UTF-8';
+		s1.setAttribute('crossorigin','*');
+		s0.parentNode.insertBefore(s1,s0);
+		})();
+		</script> -->
+<!--End of Tawk.to Script-->
 	</footer>
 	
 	<script src="js/jquery.js"></script>

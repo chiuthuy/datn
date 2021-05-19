@@ -84,7 +84,7 @@ if (session.getAttribute("memberSession") == null) {
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-md-6">
-										<form role="form" action="/TH_Homeware/SeasonServlet_Add" method="post">
+										<form name="form" action="/TH_Homeware/SeasonServlet_Add" method="post">
 										
 											<div class="form-group">
 												<label>Mã mùa sự kiện</label>
@@ -99,12 +99,12 @@ if (session.getAttribute("memberSession") == null) {
 											</div>
 											<div class="form-group">
 												<label>Ngày bắt đầu</label> 
-												<input class="form-control" type="text" name="DateStart" id="ngaybatdau" value="<%=ngaybatdau%>" />
+												<input class="form-control" type="date" name="DateStart" id="ngaybatdau" value="<%=ngaybatdau%>" />
 												<span style="color: red" id="ngaybatdau_error"><%=ngaybatdau_error %></span>
 											</div>
 											<div class="form-group">
 												<label>Ngày kết thúc</label> 
-												<input class="form-control" type="text" name="DateEnd" id="ngayketthuc" value="<%=ngayketthuc%>" />
+												<input class="form-control" type="date" name="DateEnd" id="ngayketthuc" value="<%=ngayketthuc%>" />
 												<span style="color: red" id="ngayketthuc_error"><%=ngayketthuc_error %></span>
 											</div>
 											

@@ -94,7 +94,7 @@ if (session.getAttribute("memberSession") == null) {
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-md-6">
-										<form role="form" action="/TH_Homeware/AccountServlet_Add_Del" method="post">
+										<form name="form" action="/TH_Homeware/AccountServlet_Add_Del" method="post">
 										
 											<div class="form-group">
 												<label>Tên Đăng Nhập</label>

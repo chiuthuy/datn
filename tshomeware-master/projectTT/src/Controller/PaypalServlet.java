@@ -97,7 +97,7 @@ public class PaypalServlet extends HttpServlet {
 			Account acc= new Account();
 			acc = (Account) session.getAttribute("memberSession");
 			int total = cart.totalCart();
-			String add="97 Man Thiện, Phường Hiệp Phú, Quận 9";
+			String add="Tiên Yên, Quảng Ninh";
 			String pay ="Thanh toán qua the ngân hàng";
 			
 			Shipper shipp = new Shipper();

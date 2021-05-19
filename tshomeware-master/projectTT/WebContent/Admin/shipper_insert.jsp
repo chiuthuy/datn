@@ -112,7 +112,7 @@ if (session.getAttribute("memberSession") == null) {
 											<input type="hidden" name="action" value="Insert"> 
 											<button type="submit" class="btn btn-success">Thêm</button>
 											<button type="reset" class="btn btn-primary" style="margin-left:5%">Phục hồi</button>
-											<a href="/Admin/shipper_manager.jsp"  class="btn btn-danger" style="margin-left:5%">Thoát</a>	
+											<a href="/TH_Homeware/Admin/shipper_manager.jsp"  class="btn btn-danger" style="margin-left:5%">Thoát</a>	
 										</form>
 										<br />
 									</div>

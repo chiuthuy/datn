@@ -12,7 +12,8 @@ import Model.Category;
 
 
 public interface BrandDAO {
-	// load danh sach danh muc cha
+	// load danh sach danh muc cha	
+	
 		public ArrayList<Brand> getListParentBrand();
 		
 		//load danh sach danh muc con
@@ -22,4 +23,5 @@ public interface BrandDAO {
 		
 		public Brand getBrand(String ID_Brand);
 		public ArrayList<Brand> getListParentBrand1();
+		public ArrayList<Brand> getList();
 }

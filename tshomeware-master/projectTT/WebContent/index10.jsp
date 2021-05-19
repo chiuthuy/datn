@@ -30,6 +30,7 @@
 	<section>
 	<div class="container">
 		<div class="row">
+			
 			<jsp:include page="category.jsp"></jsp:include>
 			<jsp:include page="searchproduct.jsp"></jsp:include>
 		</div>

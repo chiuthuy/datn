@@ -57,7 +57,7 @@
 		List<Product> list12 = new ArrayList<>();
 		list12 = sanPhamDAO.getList();
 		listProductSearch= (List<Product>) session.getAttribute("dsSearch");
-		System.out.println("popoaaaaaaa"+ listProductSearch);
+		System.out.println("popoaaaaaaa "+ listProductSearch);
 		ArrayList<Product> arr = sanPhamDAO.getList();
 		int start = 0, end = 15;
 		if (arr.size() < 15) {
@@ -94,7 +94,7 @@
 			session.setAttribute("cart", cart);
 		}
 		String textSearch= (String) session.getAttribute("textSearch");
-		System.out.println("popo"+ textSearch);
+		System.out.println("popo "+ textSearch);
 	%>
 	
 
@@ -217,7 +217,7 @@
 								VNĐ
 							</h2>
 							 <h4 <%if (sp.getSale()==0) {%>style="color:white;" <%}
-                        else{ %> style="display: block;"
+                        else{ %> style="display: block"
 													<%
 													}
 												%> ><%=nf.format(sp.getPrice())%>
